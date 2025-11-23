@@ -22,27 +22,49 @@ if(loginForm){
   });
 }
 
-// Keep session
 if(localStorage.getItem('adminLoggedIn')==='true' && postSection){
   loginForm.parentElement.hidden=true;
   postSection.hidden=false;
 }
 
+// Convert image to base64
+function fileToBase64(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+    reader.readAsDataURL(file);
+  });
+}
+
 // Post Blog
 if(postForm){
-  postForm.addEventListener('submit', e=>{
+  postForm.addEventListener('submit', async e=>{
     e.preventDefault();
     const title = document.getElementById('blog-title').value;
     const content = document.getElementById('blog-content').value;
+    const mainImageFile = document.getElementById('main-image').files[0];
+    const otherFiles = document.getElementById('other-images').files;
+
+    if(!mainImageFile){ postMsg.textContent="Main image required!"; return; }
+
+    const mainImage = await fileToBase64(mainImageFile);
+
+    let otherImages = [];
+    for(let file of otherFiles){
+      const img = await fileToBase64(file);
+      otherImages.push(img);
+    }
+
     let blogs = JSON.parse(localStorage.getItem('blogs')||'[]');
-    blogs.unshift({id:Date.now(),title,content,date:new Date().toLocaleString()});
-    localStorage.setItem('blogs',JSON.stringify(blogs));
+    blogs.unshift({id:Date.now(), title, content, mainImage, otherImages, date:new Date().toLocaleString()});
+    localStorage.setItem('blogs', JSON.stringify(blogs));
     postMsg.textContent="Blog posted successfully!";
     postForm.reset();
   });
 }
 
-// Load Blogs (Homepage)
+// Load Blogs
 function loadBlogs(){
   const blogList = document.getElementById('blog-list');
   if(!blogList) return;
@@ -52,9 +74,11 @@ function loadBlogs(){
   blogs.forEach(blog=>{
     const div = document.createElement('div');
     div.className='blog-item';
-    div.innerHTML = `<h3><a href="blog.html?id=${blog.id}">${blog.title}</a></h3>
-                     <small>Posted on ${blog.date}</small>
-                     <p>${blog.content.substring(0,150)}...</p>`;
+    div.innerHTML = `
+      <img src="${blog.mainImage}" alt="${blog.title}">
+      <h3><a href="blog.html?id=${blog.id}">${blog.title}</a></h3>
+      <small>Posted on ${blog.date}</small>
+      <p>${blog.content.substring(0,150)}...</p>`;
     blogList.appendChild(div);
   });
 }
@@ -69,9 +93,14 @@ function loadSingleBlog(){
   const blog = blogs.find(b=>b.id==id);
   if(blog){
     document.title = blog.title + " – DesiSafarnama";
-    blogContainer.innerHTML = `<h2>${blog.title}</h2>
-                               <small>Posted on ${blog.date}</small>
-                               <p>${blog.content.replace(/\n/g,'<br>')}</p>`;
+    let galleryHTML = '';
+    blog.otherImages.forEach(img=>{ galleryHTML += `<img src="${img}" style="width:100%;margin-top:10px;">`; });
+    blogContainer.innerHTML = `
+      <h2>${blog.title}</h2>
+      <small>Posted on ${blog.date}</small>
+      <img src="${blog.mainImage}" style="width:100%;margin:10px 0;">
+      <p>${blog.content.replace(/\n/g,'<br>')}</p>
+      ${galleryHTML}`;
   } else {
     blogContainer.innerHTML="<p>Blog not found!</p>";
   }
