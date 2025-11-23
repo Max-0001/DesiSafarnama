@@ -3,50 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DesiSafarnama – Solo Travel Stories, Global Adventures & Budget Travel Guides</title>
+<title>DesiSafarnama – Solo Travel Stories & Adventures</title>
 <base href="https://max-0001.github.io/DesiSafarnama/">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Header -->
 <header class="site-header">
   <div class="container header-inner">
     <h1 class="brand">DesiSafarnama</h1>
   </div>
 </header>
 
-<main>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h2>Explore the World, One Story at a Time 🌏</h2>
-      <p>Follow solo travel adventures, hidden destinations, and budget-friendly travel tips.</p>
-    </div>
-  </section>
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <div class="hero-content">
+    <h2>Travel the World, One Story at a Time 🌏</h2>
+    <p>Real solo travel experiences, hidden destinations, and budget-friendly tips for global explorers.</p>
+  </div>
+</section>
 
-  <!-- Floating Image -->
-  <img id="floating-img" src="" alt="Floating Travel" class="floating-image">
+<!-- Floating Image -->
+<img id="floating-img" class="floating-image" alt="Floating Travel">
 
-  <!-- Blogs Section -->
-  <section class="section" id="blogs">
-    <div class="container">
-      <h2 class="section-title">Latest Blogs</h2>
-      <div id="blog-list" class="blog-grid"></div>
-    </div>
-  </section>
-</main>
+<!-- Featured Blog Slider -->
+<section class="featured-section">
+  <div class="container">
+    <h2>Featured Blogs</h2>
+    <div id="featured-slider" class="slider"></div>
+  </div>
+</section>
 
+<!-- Blog Grid -->
+<section class="blog-grid-section">
+  <div class="container">
+    <h2>Latest Blogs</h2>
+    <div id="blog-list" class="blog-grid"></div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <p>© 2025 DesiSafarnama</p>
-    <div class="social-icons" id="social-icons"></div>
+    <div id="social-icons" class="social-icons"></div>
   </div>
 </footer>
 
 <script src="script.js"></script>
 <script>
   loadBlogs();
+  loadFeaturedSlider();
   loadFloatingImage();
   loadSocialIcons();
 </script>
+
 </body>
 </html>
