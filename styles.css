@@ -1,28 +1,21 @@
 /* General */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#fff;color:#333;line-height:1.6;scroll-behavior:smooth;}
+body{background:#fff;color:#222;line-height:1.8;}
 .container{width:90%;max-width:1200px;margin:0 auto;padding:20px;}
 
 /* Header */
-.site-header{background:#FF5722;color:#fff;padding:20px;text-align:center;}
-.site-header .brand{font-size:2rem;font-weight:600;letter-spacing:1px;}
+.site-header{background:#fff;color:#222;padding:20px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+.site-header .brand{font-size:2rem;font-weight:600;}
 
 /* Hero Banner */
 .hero-banner{
   background: url('https://source.unsplash.com/1600x600/?travel,adventure') center/cover no-repeat;
-  color:#fff;
-  text-align:center;
-  padding:120px 20px;
-  position:relative;
+  color:#fff;text-align:center;padding:120px 20px;position:relative;
 }
 .hero-banner::after{
-  content:'';
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  background: rgba(0,0,0,0.4);
+  content:'';position:absolute;top:0;left:0;width:100%;height:100%;background: rgba(0,0,0,0.4);
 }
-.hero-banner .hero-content{
-  position:relative;z-index:2;
-}
+.hero-banner .hero-content{position:relative;z-index:2;}
 .hero-banner h2{font-size:2.8rem;margin-bottom:15px;}
 .hero-banner p{font-size:1.2rem;}
 
@@ -54,12 +47,26 @@ body{background:#fff;color:#333;line-height:1.6;scroll-behavior:smooth;}
 .blog-item h3{margin:10px 15px;color:#FF5722;}
 .blog-item p{margin:0 15px 15px 15px;color:#555;font-size:0.95rem;}
 
-/* Blog Page Buttons */
-.blog-nav{display:flex;justify-content:space-between;margin:20px 0;}
-.blog-nav button{padding:10px 20px;background:#FF5722;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:0.3s;}
+/* Minimalist Blog Page */
+.minimal-blog img{width:100%;border-radius:8px;margin:20px 0;}
+.minimal-blog h2{font-size:2rem;margin:20px 0;color:#222;}
+.minimal-blog p{margin:10px 0;font-size:1.05rem;color:#333;}
+
+/* Blog Navigation Buttons */
+.blog-nav{display:flex;justify-content:space-between;margin:30px 0;}
+.blog-nav button{
+  padding:10px 20px;background:#FF5722;color:#fff;border:none;border-radius:8px;
+  cursor:pointer;font-weight:600;transition:all 0.3s ease;
+}
 .blog-nav button:hover{background:#FF9800;transform:scale(1.05);}
 
 /* Footer */
 .site-footer{background:#FF7043;color:#fff;text-align:center;padding:20px;margin-top:40px;}
 .social-icons img{width:32px;margin:0 5px;transition:0.3s;}
 .social-icons img:hover{transform:scale(1.2);}
+
+/* Responsive */
+@media(max-width:600px){
+  .blog-nav button{padding:8px 15px;font-size:0.9rem;}
+  .minimal-blog h2{font-size:1.5rem;}
+}
