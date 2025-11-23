@@ -8,27 +8,32 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>DesiSafarnama</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="admin.html">Admin</a>
-    </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand">DesiSafarnama</h1>
   </div>
 </header>
 
 <main class="container">
   <article id="blog-post"></article>
+
+  <!-- Navigation Buttons -->
+  <div class="blog-nav">
+    <button id="prev-btn">← Previous</button>
+    <button id="next-btn">Next →</button>
+  </div>
 </main>
 
-<footer>
+<footer class="site-footer">
   <div class="container">
     <p>© 2025 DesiSafarnama</p>
   </div>
 </footer>
 
 <script src="script.js"></script>
-<script>loadSingleBlog();</script>
+<script>
+  loadSingleBlog();
+  setupBlogNavigation();
+</script>
 </body>
 </html>
