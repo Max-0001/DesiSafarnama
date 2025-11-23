@@ -1,36 +1,21 @@
-/* Global */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;}
-body{background:#fdf6f0;color:#222;line-height:1.6;}
-a{text-decoration:none;color:#FF5722;}
-.container{width:90%;max-width:1000px;margin:0 auto;padding:20px;}
+/* Hero & Site Header remain same as before */
 
-/* Header */
-.site-header{background:#FF7043;padding:20px;color:#fff;}
-.site-header .brand{font-size:1.8rem;font-weight:bold;}
-.site-header nav{float:right;}
-.site-header nav a{margin-left:20px;font-weight:bold;color:#fff;transition:0.3s;}
-.site-header nav a:hover{color:#FFD54F;}
+/* Featured Blog */
+.blog-item.featured{
+  grid-column: span 2;
+  background: linear-gradient(135deg,#FF8A65,#FF7043);
+  color: #fff;
+  padding:20px;
+  border-radius:12px;
+}
+.blog-item.featured h3 a{color:#fff;}
+.blog-item.featured p{color:#ffe;}
+.blog-item.featured img{border-radius:12px;height:250px;object-fit:cover;}
 
-/* Hero */
-.hero{background:linear-gradient(135deg,#FF5722,#FF9800);color:#fff;text-align:center;padding:60px 20px;margin-bottom:40px;}
-.hero h2{font-size:2.2rem;margin-bottom:15px;}
-.hero p{font-size:1.1rem;}
-
-/* Blog Grid */
+/* Regular Blog Cards */
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
 .blog-item{background:#fff;padding:15px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.3s;}
 .blog-item:hover{transform:translateY(-5px);}
 .blog-item img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
 .blog-item h3{color:#FF5722;margin-bottom:10px;}
 .blog-item p{color:#555;}
-
-/* Forms */
-form label{display:block;margin-top:10px;}
-form input,form textarea{width:100%;padding:10px;margin-top:5px;border-radius:5px;border:1px solid #ccc;}
-form button{margin-top:15px;padding:10px 20px;background:#FF5722;color:#fff;border:none;border-radius:5px;cursor:pointer;transition:0.3s;}
-form button:hover{background:#FF9800;}
-.error-msg{color:red;margin-top:10px;}
-.success-msg{color:green;margin-top:10px;}
-
-/* Footer */
-.site-footer{background:#FF7043;color:#fff;text-align:center;padding:20px;margin-top:40px;}
