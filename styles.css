@@ -1,21 +1,11 @@
-/* Hero & Site Header remain same as before */
+/* Floating image */
+.floating-image{position:fixed;right:20px;bottom:50px;width:150px;height:150px;border-radius:50%;object-fit:cover;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
 
-/* Featured Blog */
-.blog-item.featured{
-  grid-column: span 2;
-  background: linear-gradient(135deg,#FF8A65,#FF7043);
-  color: #fff;
-  padding:20px;
-  border-radius:12px;
-}
-.blog-item.featured h3 a{color:#fff;}
-.blog-item.featured p{color:#ffe;}
-.blog-item.featured img{border-radius:12px;height:250px;object-fit:cover;}
+/* Blog Navigation Buttons */
+.blog-nav{display:flex;justify-content:space-between;margin:20px 0;}
+.blog-nav button{padding:10px 20px;background:#FF5722;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:0.3s;}
+.blog-nav button:hover{background:#FF9800;transform:scale(1.05);}
 
-/* Regular Blog Cards */
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.blog-item{background:#fff;padding:15px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.3s;}
-.blog-item:hover{transform:translateY(-5px);}
-.blog-item img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px;}
-.blog-item h3{color:#FF5722;margin-bottom:10px;}
-.blog-item p{color:#555;}
+/* Social Icons in Footer */
+.social-icons img{width:32px;margin:0 5px;transition:0.3s;}
+.social-icons img:hover{transform:scale(1.2);}
