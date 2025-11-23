@@ -13,6 +13,7 @@
     <h1 class="brand">Admin Panel</h1>
     <nav>
       <a href="index.html">Home</a>
+      <button id="logout-btn" style="background:#FFD54F;color:#222;border:none;padding:5px 10px;margin-left:20px;cursor:pointer;border-radius:5px;">Logout</button>
     </nav>
   </div>
 </header>
@@ -34,11 +35,13 @@
       <label for="blog-title">Title:</label>
       <input type="text" id="blog-title" required>
 
-      <label for="main-image">Main Image:</label>
-      <input type="file" id="main-image" accept="image/*" required>
+      <label>Main Image</label>
+      <input type="file" id="main-image" accept="image/*">
+      <input type="text" id="main-image-url" placeholder="Or enter image URL">
 
-      <label for="other-images">Other Images (optional, multiple):</label>
+      <label>Other Images (optional, multiple)</label>
       <input type="file" id="other-images" accept="image/*" multiple>
+      <input type="text" id="other-images-urls" placeholder="Or enter comma-separated image URLs">
 
       <label for="blog-content">Content:</label>
       <textarea id="blog-content" rows="8" required></textarea>
