@@ -1,4 +1,3 @@
-// Admin Password
 const ADMIN_PASSWORD = "Desi@Safarnama123";
 
 // Elements
