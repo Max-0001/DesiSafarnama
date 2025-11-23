@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DesiSafarnama – Solo Travel Stories, Global Adventures & Budget Travel Guides</title>
-<meta name="description" content="DesiSafarnama is a global solo travel blog sharing real-life adventures, travel guides, cultural experiences, hidden destinations, and budget-friendly tips from around the world. Follow inspiring stories and practical advice for your next journey—anywhere on the planet.">
-<meta name="keywords" content="DesiSafarnama, solo travel blog, world travel stories, global explorer, international travel guide, budget travel tips, solo traveler worldwide, travel adventures, backpacking blog, cultural travel experiences">
 <base href="https://max-0001.github.io/DesiSafarnama/">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,10 +11,6 @@
 <header class="site-header">
   <div class="container header-inner">
     <h1 class="brand">DesiSafarnama</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="admin.html">Admin</a>
-    </nav>
   </div>
 </header>
 
@@ -25,9 +19,12 @@
   <section class="hero">
     <div class="container hero-content">
       <h2>Explore the World, One Story at a Time 🌏</h2>
-      <p>Follow my solo travel adventures, cultural journeys, hidden destinations, and budget travel tips.</p>
+      <p>Follow solo travel adventures, hidden destinations, and budget-friendly travel tips.</p>
     </div>
   </section>
+
+  <!-- Floating Image -->
+  <img id="floating-img" src="" alt="Floating Travel" class="floating-image">
 
   <!-- Blogs Section -->
   <section class="section" id="blogs">
@@ -40,11 +37,16 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>© 2025 DesiSafarnama. All Rights Reserved.</p>
+    <p>© 2025 DesiSafarnama</p>
+    <div class="social-icons" id="social-icons"></div>
   </div>
 </footer>
 
 <script src="script.js"></script>
-<script>loadBlogs();</script>
+<script>
+  loadBlogs();
+  loadFloatingImage();
+  loadSocialIcons();
+</script>
 </body>
 </html>
